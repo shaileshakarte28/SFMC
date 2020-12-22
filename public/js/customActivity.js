@@ -22,18 +22,18 @@ define([
         connection.trigger('ready');
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
-        pyData();
+        // pyData();
     }
 
-    function pyData() {
-        console.log("Inside pyData Function...!!")
-        $.ajax({
-            type: "POST",
-            url: "/test.py",
-            data: { param: "" },
-            success: "Done!!"
-        });
-    }
+    // function pyData() {
+    //     console.log("Inside pyData Function...!!")
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "/test.py",
+    //         data: { param: "" },
+    //         success: "Done!!"
+    //     });
+    // }
 
     function initialize(data) {
         console.log(data);
