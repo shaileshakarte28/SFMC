@@ -9,11 +9,13 @@ var activity = require('./activity');
 exports.index = function(req, res){
     if( !req.session.token ) {
         alert("Not Working Fine ");
+        console.log("Not Working...!!");
         res.render( 'index', {
             title: 'Unauthenticated',
             errorMessage: 'This app may only be loaded via Salesforce Marketing Cloud',
         });
     } else {
+        console.log("Working...!!");
         alert("Working Fine ");
   
     // Takes stdout data from script which executed 
