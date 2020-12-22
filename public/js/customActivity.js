@@ -143,6 +143,10 @@ $(document).ready(function () {
         type: 'POST',
         url: '/test.py',
         data: { param: "1" },
-        success: True
+        success: 'true'
     });
   });
+
+// window.onload = function() {
+//     console.log('Test!')
+//   }
