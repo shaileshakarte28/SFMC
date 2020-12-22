@@ -20,10 +20,19 @@ define([
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger('ready');
-
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
+        pyData();
+    }
 
+    function pyData() {
+        console.log("Inside pyData Function...!!")
+        $.ajax({
+            type: "POST",
+            url: "/test.py",
+            data: { param: "" },
+            success: "Done!!"
+        });
     }
 
     function initialize(data) {
