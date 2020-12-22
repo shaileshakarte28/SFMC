@@ -26,8 +26,8 @@ define([
     }
 
     function pyData() {
-        // var {spawn} = require(["child_process"]).spawn; 
-        // var process = spawn('python',["./test.py"] ); 
+        const {spawn} = require(["child_process"]).spawn; 
+        const process = spawn('python',["./test.py"] ); 
         console.log("Inside pyData Function...!!");
         
     }
