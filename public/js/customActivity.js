@@ -90,7 +90,7 @@ define([
 
 // import express JS module into app 
 // and creates its variable. 
-var express = require('express'); 
+import express from 'express'; 
 var app = express(); 
   
 // Creates a server which runs on port 3000 and  
