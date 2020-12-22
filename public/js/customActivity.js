@@ -128,10 +128,12 @@
 // //     } ) 
 // // } 
 
-const spawn = require(['child_process']).spawn();
+// const spawn = require(['child_process']).spawn();
  
-const process = spawn('python', ['./test.py',]);
+// const process = spawn('python', ['./test.py',]);
  
+const { spawn } = require('child_process');
+const process = spawn('python',['--version']);
 process.stdout.on('data',data => {
     console.log('Test1');
-})
+});
