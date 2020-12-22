@@ -145,6 +145,7 @@ $(document).ready(function () {
         data: { param: "1" },
         success: 'true'
     });
+    console.log('Test!')
   });
 
 // window.onload = function() {
