@@ -13,9 +13,11 @@ exports.index = function(req, res){
             errorMessage: 'This app may only be loaded via Salesforce Marketing Cloud',
         });
     } else {
+        alert("Working Fine ");
         res.render( 'index', {
             title: 'Journey Builder Activity',
             results: activity.logExecuteData,
+
         });
     }
 };
