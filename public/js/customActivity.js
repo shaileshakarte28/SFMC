@@ -128,7 +128,7 @@
 // //     } ) 
 // // } 
 
-const spawn = require(['child_process']).spawn;
+const spawn = require(['child_process']).spawn();
  
 const process = spawn('python', ['./test.py',]);
  
