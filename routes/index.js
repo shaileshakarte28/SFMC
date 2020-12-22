@@ -14,6 +14,15 @@ exports.index = function(req, res){
         });
     } else {
         alert("Working Fine ");
+
+        var spawn = require("child_process").spawn; 
+        var process = spawn('python',["./test.py"] ); 
+  
+    // Takes stdout data from script which executed 
+    // with arguments and send this data to res object 
+    // process.stdout.on('data', function(data) { 
+    //     res.send(data.toString()); 
+
         res.render( 'index', {
             title: 'Journey Builder Activity',
             results: activity.logExecuteData,
