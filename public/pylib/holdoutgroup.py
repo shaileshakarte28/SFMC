@@ -1,5 +1,4 @@
 import requests
-import csv
 import json
 import xmltodict
 import datetime

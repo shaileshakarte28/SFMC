@@ -111,39 +111,56 @@
 //     console.log('Test1');
 // });
 
-$(document).ready(function () {
-  /*  
-  $({
-        type: 'POST',
-        url: '/test.py',
-        data: { param: "1" },
-        success: 'true'
-    });
-    */
+// $(document).ready(function () {
+//   /*  
+//   $({
+//         type: 'POST',
+//         url: '/test.py',
+//         data: { param: "1" },
+//         success: 'true'
+//     });
+//     */
     
-  //   var jsonPayload = '[ { "grant_type":"client_credentials", "client_id": "0uxbt59f6sju7wn305gjul2l", "client_secret": "sXyrweNBlA0KaULSDfKC0Cue", "account_id": 6291063, }]';
-  //   var url = "https://mc4pytkknrp1gsz0v23m93b3055y.auth.marketingcloudapis.com/v2/token"
-  //   var xmlhttp = new XMLHttpRequest();
+//   //   var jsonPayload = '[ { "grant_type":"client_credentials", "client_id": "0uxbt59f6sju7wn305gjul2l", "client_secret": "sXyrweNBlA0KaULSDfKC0Cue", "account_id": 6291063, }]';
+//   //   var url = "https://mc4pytkknrp1gsz0v23m93b3055y.auth.marketingcloudapis.com/v2/token"
+//   //   var xmlhttp = new XMLHttpRequest();
 
     
 
-  //   // xmlhttp.onreadystatechange = callbackFunction(xmlhttp);
-  //   xmlhttp.open("POST",url, true);
-  //   xmlhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
-  //   xmlhttp.send(jsonPayload);
-  //   alert(xmlhttp.responseText)
-  //   console.log('Test!')
-  // });
+//   //   // xmlhttp.onreadystatechange = callbackFunction(xmlhttp);
+//   //   xmlhttp.open("POST",url, true);
+//   //   xmlhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+//   //   xmlhttp.send(jsonPayload);
+//   //   alert(xmlhttp.responseText)
+//   //   console.log('Test!')
+//   // });
 
-    const spawn = require(['child_process']).spawn;
-    const process = spawn('python',['--version']);
-    alert(xmlhttp.responseText)
-    console.log('Test!') });
-  // process.stdout.on('data',data => {
-  //     console.log('Test1');
-  // });
+//     const spawn = require(['child_process']).spawn;
+//     const process = spawn('python',['--version']);
+//     alert(xmlhttp.responseText)
+//     console.log('Test!') });
+//   // process.stdout.on('data',data => {
+//   //     console.log('Test1');
+//   // });
 
-window.onload = function() {
-    console.log('Test!')
-  }
+// window.onload = function() {
+//     console.log('Test!')
+//   }
+
+const path = require('path')
+const {spawn} = require('child_process')
+
+/**
+ * Run python script, pass in `-u` to not buffer console output 
+ * @return {ChildProcess}
+ */
+function runScript(){
+  return spawn('python', [
+    "-u", 
+    path.join(__dirname, 'script.py'),
+    "--foo", "some value for foo",
+  ]);
+}
+
+const subprocess = runScript()
 
