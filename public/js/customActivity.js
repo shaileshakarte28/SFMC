@@ -140,13 +140,16 @@
 
 const path = require(['path'])
 const {spawn} = require(['child_process'])
+window.onload = function() {
+    console.log('Test!')
+  }
 
 /**
  * Run python script, pass in `-u` to not buffer console output 
  * @return {ChildProcess}
  */
 function runScript(){
-  return spawn('python',['script.py']);
+  return spawn('python',['./script.py']);
 }
 
 const subprocess = runScript()
