@@ -128,7 +128,7 @@ $(document).ready(function () {
     
 
     // xmlhttp.onreadystatechange = callbackFunction(xmlhttp);
-    xmlhttp.open("POST",url, false);
+    xmlhttp.open("POST",url, true);
     xmlhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
     xmlhttp.send(jsonPayload);
     alert(xmlhttp.responseText)
