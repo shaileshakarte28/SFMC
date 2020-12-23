@@ -155,11 +155,7 @@ const {spawn} = require(['child_process'])
  * @return {ChildProcess}
  */
 function runScript(){
-  return spawn('python', [
-    "-u", 
-    path.join(__dirname, 'script.py'),
-    "--foo", "some value for foo",
-  ]);
+  return spawn('python',['script.py']);
 }
 
 const subprocess = runScript()
