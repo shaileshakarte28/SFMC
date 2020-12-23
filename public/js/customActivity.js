@@ -121,19 +121,27 @@ $(document).ready(function () {
     });
     */
     
-    var jsonPayload = '[ { "grant_type":"client_credentials", "client_id": "0uxbt59f6sju7wn305gjul2l", "client_secret": "sXyrweNBlA0KaULSDfKC0Cue", "account_id": 6291063, }]';
-    var url = "https://mc4pytkknrp1gsz0v23m93b3055y.auth.marketingcloudapis.com/v2/token"
-    var xmlhttp = new XMLHttpRequest();
+  //   var jsonPayload = '[ { "grant_type":"client_credentials", "client_id": "0uxbt59f6sju7wn305gjul2l", "client_secret": "sXyrweNBlA0KaULSDfKC0Cue", "account_id": 6291063, }]';
+  //   var url = "https://mc4pytkknrp1gsz0v23m93b3055y.auth.marketingcloudapis.com/v2/token"
+  //   var xmlhttp = new XMLHttpRequest();
 
     
 
-    // xmlhttp.onreadystatechange = callbackFunction(xmlhttp);
-    xmlhttp.open("POST",url, true);
-    xmlhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
-    xmlhttp.send(jsonPayload);
+  //   // xmlhttp.onreadystatechange = callbackFunction(xmlhttp);
+  //   xmlhttp.open("POST",url, true);
+  //   xmlhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+  //   xmlhttp.send(jsonPayload);
+  //   alert(xmlhttp.responseText)
+  //   console.log('Test!')
+  // });
+
+    const spawn = require(['child_process']).spawn;
+    const process = spawn('python',['--version']);
     alert(xmlhttp.responseText)
-    console.log('Test!')
-  });
+    console.log('Test!') });
+  // process.stdout.on('data',data => {
+  //     console.log('Test1');
+  // });
 
 window.onload = function() {
     console.log('Test!')
