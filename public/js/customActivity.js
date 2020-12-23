@@ -120,7 +120,8 @@ $(document).ready(function () {
         success: 'true'
     });
     */
-    var jsonPayload = '[ { "grant_type":"client_credentials", "client_id": clientId, "client_secret": clientSecret, "account_id": accountId, }]';
+    
+    var jsonPayload = '[ { "grant_type":"client_credentials", "client_id": "0uxbt59f6sju7wn305gjul2l", "client_secret": "sXyrweNBlA0KaULSDfKC0Cue", "account_id": 6291063, }]';
     var url = "https://mc4pytkknrp1gsz0v23m93b3055y.auth.marketingcloudapis.com/v2/token"
     var xmlhttp = new XMLHttpRequest();
 
