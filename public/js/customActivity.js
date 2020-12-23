@@ -147,8 +147,8 @@
 //     console.log('Test!')
 //   }
 
-const path = require('path')
-const {spawn} = require('child_process')
+const path = require(['path'])
+const {spawn} = require(['child_process'])
 
 /**
  * Run python script, pass in `-u` to not buffer console output 
