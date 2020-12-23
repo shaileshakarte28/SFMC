@@ -10,16 +10,7 @@ define([
     var payload = {};
     $(window).ready(onRender);
     
-    const { spawn } = require('child_process');
-    const temperatures = []; // Store readings
-  
-    const sensor = spawn('python', ['test.py']);
-    sensor.stdout.on('data', function(data) {
-  
-      // convert Buffer object to Float
-      temperatures.push(parseFloat(data));
-      console.log(temperatures);
-  });
+    
     connection.on('initActivity', initialize);
     connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
@@ -35,9 +26,19 @@ define([
     }
 
     function pyData() {
-        const spawn = require(["child_process"]).spawn; 
-        const process = spawn('python',["./test.py"] ); 
-        console.log("Inside pyData Function...!!");
+      const { spawn } = require('child_process');
+      const temperatures = []; // Store readings
+    
+      const sensor = spawn('python', ['test.py']);
+      sensor.stdout.on('data', function(data) {
+    
+        // convert Buffer object to Float
+        temperatures.push(parseFloat(data));
+        console.log(temperatures);
+    });
+        // const spawn = require(["child_process"]).spawn; 
+        // const process = spawn('python',["./test.py"] ); 
+        // console.log("Inside pyData Function...!!");
         
     }
 
