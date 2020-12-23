@@ -111,34 +111,30 @@ define([
 //     console.log('Test1');
 // });
 
-// $(document).ready(function () {
-//     $({
-//         type: 'POST',
-//         url: '/test.py',
-//         data: { param: "1" },
-//         success: 'true'
-//     });
-//     console.log('Test!')
-//   });
+$(document).ready(function () {
+  /*  
+  $({
+        type: 'POST',
+        url: '/test.py',
+        data: { param: "1" },
+        success: 'true'
+    });
+    */
+    var jsonPayload = '[ { "grant_type":"client_credentials", "client_id": clientId, "client_secret": clientSecret, "account_id": accountId, }]';
+    var url = "https://mc4pytkknrp1gsz0v23m93b3055y.auth.marketingcloudapis.com/v2/token"
+    var xmlhttp = new XMLHttpRequest();
 
-// window.onload = function() {
-//     console.log('Test!')
-//   }
+    
 
-define(['pythondata'],
-function(pythondata){
-  'use strict'
+    xmlhttp.onreadystatechange = callbackFunction(xmlhttp);
+    xmlhttp.open("POST",url, false);
+    xmlhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+    xmlhttp.send(jsonPayload);
+    alert(xmlhttp.responseText)
+    console.log('Test!')
+  });
 
-  
-  const { spawn } = require('child_process');
-  const temperatures = []; // Store readings
+window.onload = function() {
+    console.log('Test!')
+  }
 
-  const sensor = spawn('python', ['sensor.py']);
-  sensor.stdout.on('data', function(data) {
-
-    // convert Buffer object to Float
-    temperatures.push(parseFloat(data));
-    console.log(temperatures);
-});
-}
-)
